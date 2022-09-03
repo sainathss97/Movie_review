@@ -19,13 +19,14 @@ from movie import views as movieViews
 # for Iamges and Documents
 from django.conf.urls.static import  static
 from django.conf import settings
-
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',movieViews.home,name='home'),
     path('about/',movieViews.about,name='about'),
     path('signup/', movieViews.siginup,name='signup'),
+    path('news/',include('news.urls')),
 ]
 
 
