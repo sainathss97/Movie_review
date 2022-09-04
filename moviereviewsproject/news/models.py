@@ -6,3 +6,6 @@ class News(models.Model):
     headline = models.CharField(max_length=256)
     body = models.TextField()
     date = models.DateField()
+
+    def __str__(self) -> str:
+        return self.headline.title()

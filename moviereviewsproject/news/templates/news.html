@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +25,6 @@
             {% endfor %}
             <a href="{% url 'home' %}" class="btn btn-primary">Go Home</a>
     </div>
-   
+   {% endblock content %}
 </body>
 </html>
