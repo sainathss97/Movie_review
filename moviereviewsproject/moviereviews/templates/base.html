@@ -26,8 +26,12 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="{% url 'news' %}">📰News📰</a>
-                    <a class="nav-link" href="#">🔑Login🔑</a>
-                    <a class="nav-link" href="#">📖Sign Up📖</a>
+                    {% if user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'logoutaccount' %}">🔓Logout {{ user.username }}🔓</a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'loginaccount' %}">🔑Login🔑</a>
+                    <a class="nav-link" href="{% url 'signupaccount' %}">📖Sign Up📖</a>
+                    {% endif  %}
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search for Movies..."
                             aria-label="Search" name='searchMovie'>

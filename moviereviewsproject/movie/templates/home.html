@@ -23,19 +23,10 @@
 
     </div>
 
-    <div class = container>
-        <form action="">
-            <div class="mb-3">
-                <label class="form-label">Search for Movies</label>
-                <input type="text" name="searchMovie" class="form-control" placeholder="District 9">
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-    </div>
-
-        <p>Searching for: {{ searchTerm }}</p>
-            
+        {% if not seacrhTerm == None %}
+            <p>Searching for: {{ searchTerm }}</p>
+        {% endif %}
+            <br><br><br>
     <div class="row row-cols-1 row-cols-md-3 g-4">
                 {% for movie in movies %}
                 <div v-for="movie in movies" class="col">
@@ -57,7 +48,9 @@
             </div>
             <br />
 
-
+            <br>
+            <br>
+            
     <div class=container>
         <h2> Join our mailling list</h2>
         <form action="{% url 'signup' %}">
@@ -66,7 +59,7 @@
                 <input type="email" name="email" class="form-control" placeholder="Enter your Email ...">
             </div>
     
-            <button type="submit" class="btn btn-primary">Sign Up 🤩</button>
+            <button type="submit" class="btn btn-primary">Submit 🤩</button>
             <a href="{% url 'news' %}" class="btn btn-secondary">📰News📰</a>
         </form>
     </div>
