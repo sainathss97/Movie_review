@@ -1,5 +1,5 @@
-import imp
-from urllib import request
+from cmath import log
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render 
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from .forms import UserCreateForm
@@ -34,7 +34,7 @@ def signupaccount(request):
                                                             'error':'Passwords are not matching'})
 
 
-
+@login_required
 def logoutaccount(request):
     logout(request)
     return redirect('home')
